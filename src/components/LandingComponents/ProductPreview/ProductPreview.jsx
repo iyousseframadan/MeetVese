@@ -26,7 +26,7 @@ export default function ProductPreview() {
         </div>
 
         {/* Main Preview Grid */}
-        <div className="grid lg:grid-cols-2 gap-8 mb-8">
+        <div className="grid lg:grid-cols-1 gap-8 mb-8">
           {/* Meeting Room Interface */}
           <div className="bg-white dark:bg-[#181B26] rounded-2xl p-6 lg:p-8 shadow-lg border border-gray-200 dark:border-[#2A2E3B] transition-colors duration-300">
             <div className="flex items-center gap-3 mb-4">
@@ -50,35 +50,7 @@ export default function ProductPreview() {
           </div>
 
           {/* Noise Analytics Dashboard */}
-          <div className="bg-white dark:bg-[#181B26] rounded-2xl p-6 lg:p-8 shadow-lg border border-gray-200 dark:border-[#2A2E3B] transition-colors duration-300">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 bg-green-100 dark:bg-green-900/40 rounded-lg flex items-center justify-center">
-                <BarChart2 className="w-5 h-5 text-green-600 dark:text-green-400" />
-              </div>
-              <h3 className="text-gray-900 dark:text-[#F1F5F9] font-semibold">
-                Noise Analytics Dashboard
-              </h3>
-            </div>
-            <div className="rounded-xl overflow-hidden bg-gray-100 dark:bg-[#1A2333] h-64 flex items-center justify-center">
-              {/* Mock analytics visualization */}
-              <div className="w-full h-full p-6">
-                <div className="flex items-end justify-between h-full gap-2">
-                  {[65, 45, 80, 35, 60, 75, 40, 55, 70, 50, 85, 45].map(
-                    (height, i) => (
-                      <div
-                        key={i}
-                        className="flex-1 bg-blue-600 dark:bg-blue-400 rounded-t transition-all"
-                        style={{ height: `${height}%` }}
-                      ></div>
-                    )
-                  )}
-                </div>
-              </div>
-            </div>
-            <p className="text-gray-600 dark:text-[#A8B0C2] mt-4">
-              Real-time visualization of noise levels and filtering performance.
-            </p>
-          </div>
+         
         </div>
 
         {/* Secondary Features Grid */}
