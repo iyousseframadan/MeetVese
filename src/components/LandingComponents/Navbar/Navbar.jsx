@@ -9,7 +9,7 @@ export default function Navbar() {
   const location = useLocation();
 
   const isLanding = location.pathname === "/";
-  const isLoggedIn = localStorage.getItem("userToken"); // التحقق من تسجيل الدخول
+  const isLoggedIn = localStorage.getItem("userToken");
 
   const closeMobile = () => setMobileMenuOpen(false);
 
@@ -23,13 +23,7 @@ export default function Navbar() {
   const isActiveSection = (hash) => location.hash === hash;
 
   return (
-    <nav
-      className="fixed top-0 left-0 right-0 z-50 
-        bg-white/80 dark:bg-[#0D0F16]/80 
-        backdrop-blur-md border-b 
-        border-gray-200 dark:border-[#2A2E3B] transition-colors duration-300
-      "
-    >
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-[#0D0F16]/80 backdrop-blur-md border-b border-gray-200 dark:border-[#2A2E3B] transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link to="/" onClick={closeMobile}>
@@ -46,38 +40,55 @@ export default function Navbar() {
               <>
                 <a
                   href="#features"
-                  className={`${linkClasses} ${isActiveSection("#features") ? activeClasses : inactiveClasses}`}
+                  className={`${linkClasses} ${
+                    isActiveSection("#features")
+                      ? activeClasses
+                      : inactiveClasses
+                  }`}
                 >
                   Features
                 </a>
                 <a
                   href="#how-it-works"
-                  className={`${linkClasses} ${isActiveSection("#how-it-works") ? activeClasses : inactiveClasses}`}
+                  className={`${linkClasses} ${
+                    isActiveSection("#how-it-works")
+                      ? activeClasses
+                      : inactiveClasses
+                  }`}
                 >
                   How It Works
                 </a>
                 <a
                   href="#Overview"
-                  className={`${linkClasses} ${isActiveSection("#Overview") ? activeClasses : inactiveClasses}`}
+                  className={`${linkClasses} ${
+                    isActiveSection("#Overview")
+                      ? activeClasses
+                      : inactiveClasses
+                  }`}
                 >
                   Overview
                 </a>
                 <a
                   href="#our-audience"
-                  className={`${linkClasses} ${isActiveSection("#our-audience") ? activeClasses : inactiveClasses}`}
+                  className={`${linkClasses} ${
+                    isActiveSection("#our-audience")
+                      ? activeClasses
+                      : inactiveClasses
+                  }`}
                 >
                   Our Audience
                 </a>
               </>
             )}
 
-            {/* لا تظهر هذه اللينكات إلا لو اليوزر مسجل (isLoggedIn) */}
             {isLoggedIn && !isLanding && (
               <>
                 <NavLink
                   to="/home"
                   className={({ isActive }) =>
-                    `${linkClasses} ${isActive ? activeClasses : inactiveClasses}`
+                    `${linkClasses} ${
+                      isActive ? activeClasses : inactiveClasses
+                    }`
                   }
                 >
                   Dashboard
@@ -85,7 +96,9 @@ export default function Navbar() {
                 <NavLink
                   to="/meetings"
                   className={({ isActive }) =>
-                    `${linkClasses} ${isActive ? activeClasses : inactiveClasses}`
+                    `${linkClasses} ${
+                      isActive ? activeClasses : inactiveClasses
+                    }`
                   }
                 >
                   Meetings
@@ -93,7 +106,9 @@ export default function Navbar() {
                 <NavLink
                   to="/groups"
                   className={({ isActive }) =>
-                    `${linkClasses} ${isActive ? activeClasses : inactiveClasses}`
+                    `${linkClasses} ${
+                      isActive ? activeClasses : inactiveClasses
+                    }`
                   }
                 >
                   Groups
@@ -101,7 +116,9 @@ export default function Navbar() {
                 <NavLink
                   to="/profile"
                   className={({ isActive }) =>
-                    `${linkClasses} ${isActive ? activeClasses : inactiveClasses}`
+                    `${linkClasses} ${
+                      isActive ? activeClasses : inactiveClasses
+                    }`
                   }
                 >
                   Profile
@@ -114,13 +131,13 @@ export default function Navbar() {
                 <>
                   <Link
                     to="/login"
-                    className="text-blue-600 dark:text-blue-400 font-bold hover:-translate-y-0.5 cursor-pointer text-sm"
+                    className="text-blue-600 dark:text-blue-400 font-bold text-sm"
                   >
                     Login
                   </Link>
                   <Link
                     to="/signup"
-                    className="bg-blue-600 hover:bg-blue-700 text-white rounded-xl shadow-md px-5 py-2.5 font-bold hover:-translate-y-0.5 text-sm"
+                    className="bg-blue-600 text-white rounded-xl px-5 py-2.5 font-bold text-sm"
                   >
                     Get Started
                   </Link>
@@ -131,7 +148,7 @@ export default function Navbar() {
                     localStorage.removeItem("userToken");
                     window.location.href = "/";
                   }}
-                  className="text-red-500 font-bold text-sm hover:underline"
+                  className="text-red-500 font-bold text-sm"
                 >
                   Logout
                 </button>
@@ -144,9 +161,9 @@ export default function Navbar() {
             <DarkMode />
             <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
               {mobileMenuOpen ? (
-                <X className="w-7 h-7 text-gray-900 dark:text-[#F1F5F9]" />
+                <X className="w-7 h-7" />
               ) : (
-                <Menu className="w-7 h-7 text-gray-900 dark:text-[#F1F5F9]" />
+                <Menu className="w-7 h-7" />
               )}
             </button>
           </div>
@@ -154,7 +171,7 @@ export default function Navbar() {
       </div>
 
       {mobileMenuOpen && (
-        <div className="md:hidden absolute top-16 left-0 right-0 bg-white dark:bg-[#0D0F16] shadow-lg border-b border-gray-200 dark:border-[#2A2E3B] flex flex-col gap-4 px-6 py-8 z-40 transition-all">
+        <div className="md:hidden absolute top-16 left-0 right-0 bg-white dark:bg-[#0D0F16] shadow-lg border-b flex flex-col gap-4 px-6 py-8 z-40">
           {isLanding ? (
             <>
               {["#features", "#how-it-works", "#Overview", "#our-audience"].map(
@@ -163,7 +180,11 @@ export default function Navbar() {
                     key={hash}
                     href={hash}
                     onClick={closeMobile}
-                    className={`text-lg font-semibold ${isActiveSection(hash) ? "text-blue-600" : "text-gray-800 dark:text-[#F1F5F9]"}`}
+                    className={`text-lg font-semibold ${
+                      isActiveSection(hash)
+                        ? "text-blue-600"
+                        : "text-gray-800 dark:text-[#F1F5F9]"
+                    }`}
                   >
                     {hash.replace("#", "").toUpperCase()}
                   </a>
@@ -178,43 +199,17 @@ export default function Navbar() {
                 to={path}
                 onClick={closeMobile}
                 className={({ isActive }) =>
-                  `text-lg font-semibold ${isActive ? "text-blue-600" : "text-gray-800 dark:text-[#F1F5F9]"}`
+                  `text-lg font-semibold ${
+                    isActive
+                      ? "text-blue-600"
+                      : "text-gray-800 dark:text-[#F1F5F9]"
+                  }`
                 }
               >
                 {path.replace("/", "").toUpperCase()}
               </NavLink>
             ))
           )}
-          <div className="flex flex-col gap-3 mt-6 border-t pt-6">
-            {!isLoggedIn ? (
-              <>
-                <Link
-                  to="/login"
-                  onClick={closeMobile}
-                  className="text-center py-3 font-bold text-blue-600 border border-blue-600 rounded-xl"
-                >
-                  Login
-                </Link>
-                <Link
-                  to="/signup"
-                  onClick={closeMobile}
-                  className="text-center py-3 bg-blue-600 text-white rounded-xl font-bold"
-                >
-                  Get Started
-                </Link>
-              </>
-            ) : (
-              <button
-                onClick={() => {
-                  localStorage.removeItem("userToken");
-                  window.location.href = "/";
-                }}
-                className="text-center py-3 font-bold text-red-500 border border-red-500 rounded-xl"
-              >
-                Logout
-              </button>
-            )}
-          </div>
         </div>
       )}
     </nav>
