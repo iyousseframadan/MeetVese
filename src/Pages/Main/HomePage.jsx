@@ -48,26 +48,6 @@ export default function HomePage() {
     },
   ];
 
-  const stats = [
-    {
-      icon: <Video size={20} className="text-blue-500" />,
-      label: "Meetings this week",
-      value: "8",
-      trend: "+3 from last week",
-    },
-    {
-      icon: <Activity size={20} className="text-emerald-500" />,
-      label: "Avg Clarity Score",
-      value: "93%",
-      trend: "Optimal speech",
-    },
-    {
-      icon: <Mic size={20} className="text-purple-500" />,
-      label: "Noise Filtered",
-      value: "1.2 GB",
-      trend: "Last 7 days",
-    },
-  ];
 
   const recentMeetings = [
     {
@@ -167,31 +147,7 @@ export default function HomePage() {
           </div>
         </motion.section>
 
-        {/* Stats Strip */}
-        <section className="grid gap-6 md:grid-cols-3">
-          {stats.map((s, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: idx * 0.1 }}
-              className="bg-white dark:bg-[#181B26] border border-slate-200 dark:border-[#2A2E3B] p-6 rounded-4xl flex items-center gap-5 shadow-sm hover:shadow-md transition-all"
-            >
-              <div className="p-4 bg-slate-50 dark:bg-[#0D0F16] rounded-2xl">
-                {s.icon}
-              </div>
-              <div>
-                <p className="text-xs font-bold text-slate-500 uppercase tracking-widest">
-                  {s.label}
-                </p>
-                <p className="text-2xl font-black mt-1">{s.value}</p>
-                <p className="text-[10px] font-bold text-blue-600 mt-1">
-                  {s.trend}
-                </p>
-              </div>
-            </motion.div>
-          ))}
-        </section>
+       
 
         {/* Action Center Grid */}
         <div className="grid lg:grid-cols-12 gap-8">

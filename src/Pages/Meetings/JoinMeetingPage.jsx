@@ -2,7 +2,14 @@
 import React from "react";
 import Navbar from "../../components/LandingComponents/Navbar/Navbar";
 import { motion } from "framer-motion";
-import { Link2, User, MicOff, ArrowRight, ShieldCheck } from "lucide-react";
+import {
+  Link2,
+  User,
+  MicOff,
+  VideoOff,
+  ArrowRight,
+  ShieldCheck,
+} from "lucide-react";
 
 export default function JoinMeetingPage() {
   const fadeInUp = {
@@ -57,33 +64,66 @@ export default function JoinMeetingPage() {
               />
             </div>
 
-            <label className="group flex items-center gap-3 cursor-pointer p-4 bg-slate-50 dark:bg-[#0D0F16] rounded-2xl border border-slate-200 dark:border-[#2A2E3B] hover:border-blue-500 transition-all">
-              <div className="relative flex items-center">
-                <input
-                  type="checkbox"
-                  className="peer h-5 w-5 cursor-pointer appearance-none rounded-md border border-slate-300 dark:border-[#2A2E3B] checked:bg-blue-600 checked:border-blue-600 transition-all"
-                />
-                <span className="absolute text-white opacity-0 peer-checked:opacity-100 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-3.5 w-3.5"
-                    view0="0 0 20 20"
-                    fill="currentColor"
-                    stroke="currentColor"
-                    strokeWidth="1"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clipRule="evenodd"
-                    ></path>
-                  </svg>
+            {/* Privacy Toggles Container */}
+            <div className="space-y-3 pt-2">
+              {/* Mic Toggle */}
+              <label className="group flex items-center gap-3 cursor-pointer p-4 bg-slate-50 dark:bg-[#0D0F16] rounded-2xl border border-slate-200 dark:border-[#2A2E3B] hover:border-blue-500 transition-all">
+                <div className="relative flex items-center">
+                  <input
+                    type="checkbox"
+                    className="peer h-5 w-5 cursor-pointer appearance-none rounded-md border border-slate-300 dark:border-[#2A2E3B] checked:bg-blue-600 checked:border-blue-600 transition-all"
+                  />
+                  <span className="absolute text-white opacity-0 peer-checked:opacity-100 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-3.5 w-3.5"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      stroke="currentColor"
+                      strokeWidth="1"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clipRule="evenodd"
+                      ></path>
+                    </svg>
+                  </span>
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-[#A8B0C2] flex items-center gap-2">
+                  <MicOff size={14} /> Join with microphone muted
                 </span>
-              </div>
-              <span className="text-xs font-semibold text-slate-600 dark:text-[#A8B0C2] flex items-center gap-2">
-                <MicOff size={14} /> Join with microphone muted
-              </span>
-            </label>
+              </label>
+
+              {/* Camera Toggle - الإضافة الجديدة */}
+              <label className="group flex items-center gap-3 cursor-pointer p-4 bg-slate-50 dark:bg-[#0D0F16] rounded-2xl border border-slate-200 dark:border-[#2A2E3B] hover:border-blue-500 transition-all">
+                <div className="relative flex items-center">
+                  <input
+                    type="checkbox"
+                    className="peer h-5 w-5 cursor-pointer appearance-none rounded-md border border-slate-300 dark:border-[#2A2E3B] checked:bg-blue-600 checked:border-blue-600 transition-all"
+                  />
+                  <span className="absolute text-white opacity-0 peer-checked:opacity-100 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-3.5 w-3.5"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      stroke="currentColor"
+                      strokeWidth="1"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clipRule="evenodd"
+                      ></path>
+                    </svg>
+                  </span>
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-[#A8B0C2] flex items-center gap-2">
+                  <VideoOff size={14} /> Join with camera turned off
+                </span>
+              </label>
+            </div>
 
             <button
               type="submit"

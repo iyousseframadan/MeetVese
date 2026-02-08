@@ -1,9 +1,13 @@
 import { Play } from "lucide-react";
 import photo1 from "../../../assets/hero/Gemini_Generated_Image_9el23k9el23k9el2.png";
+import { Link } from "react-router-dom";
 
 export default function Hero() {
   return (
-    <section className="bg-white dark:bg-[#0D0F16] transition-all duration-300 " id="hero">
+    <section
+      className="bg-white dark:bg-[#0D0F16] transition-all duration-300 "
+      id="hero"
+    >
       <div className="max-w-[1440px] mx-auto px-6 lg:px-16 py-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mt-6 md:mt-15">
           {/* Left Text Section */}
@@ -22,9 +26,11 @@ export default function Hero() {
 
             {/* Buttons */}
             <div className="flex items-center gap-4 flex-wrap">
-              <button className="bg-blue-700 hover:bg-blue-800 text-white px-8 py-4 rounded-lg text-lg font-semibold shadow-md hover:shadow-lg transition-all">
-                Start Free Meeting
-              </button>
+              <Link to="/Home" className="w-max">
+                <button className="bg-blue-700 hover:bg-blue-800 text-white px-8 py-4 rounded-lg text-lg font-semibold shadow-md hover:shadow-lg transition-all">
+                  Start Free Meeting
+                </button>
+              </Link>
 
               <button className="px-8 py-4 text-lg rounded-lg border border-gray-300 dark:border-[#2A2E3B] text-gray-700 dark:text-[#F1F5F9] hover:bg-gray-100 dark:hover:bg-[#232734] transition-all flex items-center gap-2">
                 <Play className="w-5 h-5" />

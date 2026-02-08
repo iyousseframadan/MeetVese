@@ -14,6 +14,7 @@ import {
   X,
   Send,
   ShieldCheck,
+  Type, // أيقونة الـ CC
 } from "lucide-react";
 import { useState } from "react";
 
@@ -21,6 +22,7 @@ export default function MeetingPage() {
   const [muted, setMuted] = useState(false);
   const [cameraOff, setCameraOff] = useState(true);
   const [isChatOpen, setIsChatOpen] = useState(false);
+  const [isCaptionsOn, setIsCaptionsOn] = useState(false); // الحالة الخاصة بالترجمة (CC)
 
   const users = [
     {
@@ -152,6 +154,14 @@ export default function MeetingPage() {
               <button className="hidden sm:flex p-4 rounded-2xl bg-slate-100 dark:bg-[#2A2E3B] hover:bg-emerald-600 hover:text-white transition-all shadow-md">
                 <Waves size={22} />
               </button>
+              {/* أيقونة الترجمة CC المضافة */}
+              <button
+                onClick={() => setIsCaptionsOn(!isCaptionsOn)}
+                className={`p-4 rounded-2xl transition-all shadow-md active:scale-90 ${isCaptionsOn ? "bg-blue-600 text-white shadow-blue-600/30" : "bg-slate-100 dark:bg-[#2A2E3B] hover:bg-slate-200 dark:hover:bg-[#353A4D]"}`}
+                title="Captions"
+              >
+                <Type size={22} />
+              </button>
             </div>
 
             <div className="flex items-center gap-3">
@@ -173,7 +183,7 @@ export default function MeetingPage() {
           </div>
         </div>
 
-        {/* Right Sidebar: Optimized for Mobile Overlay */}
+        {/* Right Sidebar */}
         <AnimatePresence>
           {isChatOpen && (
             <motion.aside

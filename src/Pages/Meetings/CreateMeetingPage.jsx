@@ -103,6 +103,11 @@ export default function CreateMeetingPage() {
                     default: true,
                   },
                   {
+                    label: "AI Meeting Summary", // الخيار الجديد المضاف
+                    icon: <Zap size={14} />,
+                    default: true,
+                  },
+                  {
                     label: "Secure Password",
                     icon: <Shield size={14} />,
                     default: false,
